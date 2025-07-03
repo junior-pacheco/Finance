@@ -8,7 +8,7 @@ import MinesweeperGame from './components/MinesweeperGame';
 
 const App = () => {
   return (
-      <div className='h-[100vh] bg-gray-900'>
+      <div className='h-[100vh]'>
         {/* <main> */}
         <Routes>
             <Route path="/" element={<Portal/>} />

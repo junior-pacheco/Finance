@@ -35,9 +35,10 @@ export default function Portal() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl">
+        
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-700 mb-4 drop-shadow-sm">
+          <h1 className="2xl:text-5xl md:text-3xl text-3xl font-bold text-gray-700 mb-4 drop-shadow-sm">
             Portal de Juegos Neomórfico
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
