@@ -12,9 +12,9 @@ type CellState = {
 
 type GameState = "playing" | "won" | "lost"
 
-const ROWS = 9
-const COLS = 9
-const MINES = 10
+const ROWS = 6
+const COLS = 6
+const MINES = 5
 
 
 export default function MinesweeperGame() {
@@ -281,7 +281,7 @@ export default function MinesweeperGame() {
                 <button
                   key={`${r}-${c}`}
                   className={`
-                    w-6 h-6 rounded-lg flex items-center justify-center font-bold transition-all duration-150 cursor-pointer
+                    w-12 h-12 rounded-lg flex items-center justify-center font-bold transition-all duration-150 cursor-pointer
                     ${getCellStyle(cell)}
                     ${gameState !== "playing" ? "cursor-not-allowed" : ""}
                   `}
