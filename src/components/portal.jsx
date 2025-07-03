@@ -49,7 +49,7 @@ export default function Portal() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-700 mb-2 drop-shadow-sm">
-            Portal de Juegos Neomórfico
+            Portal de Juegos
           </h1>
           <p className="text-gray-600 text-base max-w-xs mx-auto">
             Toca una tarjeta para descubrir más y empezar a jugar.
