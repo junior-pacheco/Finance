@@ -263,7 +263,7 @@ export default function Game2048() {
       <div className=" p-8 max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-gray-700 mb-4 drop-shadow-sm">2048 Neomórfico</h1>
+          <h1 className="text-4xl font-bold text-gray-700 mb-4 drop-shadow-sm">2048</h1>
 
           <div className="flex justify-between gap-4 mb-4">
             <div className="bg-gray-100 rounded-2xl shadow-[inset_8px_8px_16px_rgba(0,0,0,0.1),inset_-8px_-8px_16px_rgba(255,255,255,0.8)] p-4 flex-1">

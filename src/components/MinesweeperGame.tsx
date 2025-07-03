@@ -243,7 +243,7 @@ export default function MinesweeperGame() {
       <div className="bg-gray-100 rounded-3xl shadow-[20px_20px_40px_rgba(0,0,0,0.1),-20px_-20px_40px_rgba(255,255,255,0.8)] p-8 max-w-4xl w-full">
         {/* Header */}
         <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-gray-700 mb-4 drop-shadow-sm">💣 Buscaminas Neomórfico</h1>
+          <h1 className="text-4xl font-bold text-gray-700 mb-4 drop-shadow-sm">Buscaminas</h1>
 
           {/* Stats */}
           <div className="flex justify-center gap-4 mb-6">
