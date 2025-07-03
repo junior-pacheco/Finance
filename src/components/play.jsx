@@ -33,7 +33,23 @@ const THEMES = {
     icon: "🎵",
     cards: ["🎵", "🎶", "🎸", "🎹", "🥁", "🎺", "🎷", "🎤"],
   },
+  caritas: {
+    name: "Caritas",
+    icon: "😊",
+    cards: ["😀", "😅", "😂", "😍", "😎", "😭", "😡", "🥶"],
+  },
+  banderas: {
+    name: "Banderas",
+    icon: "🚩",
+    cards: ["🇨🇴", "🇺🇸", "🇫🇷", "🇧🇷", "🇯🇵", "🇲🇽", "🇦🇷", "🇮🇹"],
+  },
+  numeros: {
+    name: "Números",
+    icon: "🔢",
+    cards: ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣"],
+  },
 }
+
 
 export default function MemoryGame() {
   const [currentTheme, setCurrentTheme] = useState("animales")
