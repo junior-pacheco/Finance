@@ -12,12 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@nextui-org/modal": "^2.2.7",
     "@nextui-org/react": "^2.6.11",
-    "framer-motion": "^12.15.0",
+    "@nextui-org/theme": "^2.4.5",
+    "framer-motion": "^12.23.1",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.1"
+    "react-router-dom": "^7.6.1",
+    "recharts": "^3.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
