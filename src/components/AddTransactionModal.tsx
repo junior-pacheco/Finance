@@ -1,18 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Input,
-  Select,
-  SelectItem,
-} from "@nextui-org/react"
-import { TrendingUp, TrendingDown } from "lucide-react"
+import { X, TrendingUp, TrendingDown } from "lucide-react"
+import { Input } from "@nextui-org/react"
 
 interface AddTransactionModalProps {
   isOpen: boolean
@@ -62,31 +52,39 @@ export function AddTransactionModal({
 
   const categories = type === "expense" ? expenseCategories : incomeCategories
 
+  if (!isOpen) return null
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} placement="center" className="mx-4">
-      <ModalContent className="bg-zinc-900">
-        <ModalHeader className="text-white text-center">Nueva Transacción</ModalHeader>
-        <ModalBody className="space-y-4">
-          {/* Tipo de transacción */}
+    <div className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center p-4">
+      <div className="bg-zinc-900 w-full max-w-md p-6 rounded-xl shadow-lg relative text-white">
+        <button
+          className="absolute top-3 right-3 text-gray-400 hover:text-white"
+          onClick={onClose}
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <h2 className="text-xl font-semibold mb-4 text-center">Nueva Transacción</h2>
+
+        <div className="space-y-4">
+          {/* Tipo */}
           <div className="grid grid-cols-2 gap-2">
-            <Button
-              color={type === "expense" ? "danger" : "default"}
-              variant={type === "expense" ? "solid" : "bordered"}
-              onPress={() => setType("expense")}
-              className="h-12"
+            <button
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-md border ${
+                type === "expense" ? "bg-red-500 text-white border-red-500" : "border-gray-600 text-gray-300"
+              }`}
+              onClick={() => setType("expense")}
             >
-              <TrendingDown className="h-4 w-4 mr-2" />
-              Gasto
-            </Button>
-            <Button
-              color={type === "income" ? "success" : "default"}
-              variant={type === "income" ? "solid" : "bordered"}
-              onPress={() => setType("income")}
-              className="h-12"
+              <TrendingDown className="h-4 w-4" /> Gasto
+            </button>
+            <button
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-md border ${
+                type === "income" ? "bg-green-500 text-white border-green-500" : "border-gray-600 text-gray-300"
+              }`}
+              onClick={() => setType("income")}
             >
-              <TrendingUp className="h-4 w-4 mr-2" />
-              Ingreso
-            </Button>
+              <TrendingUp className="h-4 w-4" /> Ingreso
+            </button>
           </div>
 
           {/* Monto */}
@@ -98,26 +96,24 @@ export function AddTransactionModal({
             onValueChange={setAmount}
             variant="bordered"
             size="lg"
-            classNames={{
-              input: "text-lg",
-            }}
           />
 
           {/* Categoría */}
-          <Select
-            label="Categoría"
-            placeholder="Selecciona una categoría"
-            selectedKeys={category ? [category] : []}
-            onSelectionChange={(keys) => setCategory(Array.from(keys)[0] as string)}
-            variant="bordered"
-            size="lg"
-          >
-            {categories.map((cat) => (
-              <SelectItem key={cat} value={cat}>
-                {cat}
-              </SelectItem>
-            ))}
-          </Select>
+          <div>
+            <label className="text-sm text-white mb-1 block">Categoría</label>
+            <select
+              className="w-full bg-zinc-800 border border-gray-600 rounded-md px-4 py-2 text-white"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="">Selecciona una categoría</option>
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {/* Descripción */}
           <Input
@@ -130,17 +126,34 @@ export function AddTransactionModal({
           />
 
           {/* Fecha */}
-          <Input type="date" label="Fecha" value={date} onValueChange={setDate} variant="bordered" size="lg" />
-        </ModalBody>
-        <ModalFooter>
-          <Button variant="bordered" onPress={onClose} className="flex-1">
-            Cancelar
-          </Button>
-          <Button color={type === "expense" ? "danger" : "success"} onPress={handleSubmit} className="flex-1">
-            Agregar
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+          <Input
+            type="date"
+            label="Fecha"
+            value={date}
+            onValueChange={setDate}
+            variant="bordered"
+            size="lg"
+          />
+
+          {/* Acciones */}
+          <div className="flex gap-2 mt-4">
+            <button
+              onClick={onClose}
+              className="flex-1 border border-gray-500 rounded-md px-4 py-2 text-white hover:bg-zinc-800"
+            >
+              Cancelar
+            </button>
+            <button
+              onClick={handleSubmit}
+              className={`flex-1 rounded-md px-4 py-2 text-white ${
+                type === "expense" ? "bg-red-500 hover:bg-red-600" : "bg-green-500 hover:bg-green-600"
+              }`}
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

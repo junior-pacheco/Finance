@@ -169,7 +169,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black pb-20">
       {/* Header Móvil */}
-      <div className="bg-zinc-900 sticky top-0 z-10">
+      <div className="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-10">
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -203,14 +203,14 @@ function App() {
                 <p className="text-gray-400 text-sm mb-1">Balance Total</p>
                 <p className="text-3xl font-bold text-white mb-3">${balance.toLocaleString()}</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+                  <div className="text-center p-3 bg-green/10 rounded-lg border border-green-500/20">
                     <div className="flex items-center justify-center gap-1 text-success mb-1">
                       <TrendingUp className="h-4 w-4 text-white" />
                       <span className="text-xs font-medium text-white">Ingresos</span>
                     </div>
                     <p className="font-semibold text-green-500">${totalIncome.toLocaleString()}</p>
                   </div>
-                  <div className="text-center p-3 bg-red-500/10 rounded-lg border border-red-500/20">
+                  <div className="text-center p-3 bg-danger/10 rounded-lg border border-red-500/20">
                     <div className="flex items-center justify-center gap-1 text-danger mb-1">
                       <TrendingDown className="h-4 text-white w-4" />
                       <span className="text-xs text-white font-medium">Gastos</span>

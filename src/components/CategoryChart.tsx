@@ -109,7 +109,7 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
                 {currentData.map((item, index) => {
                   const percentage = ((item.value / total) * 100).toFixed(1)
                   return (
-                    <div key={item.name} className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg">
+                    <div key={item.name} className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg focus:outline-none">
                       <div className="flex items-center space-x-3">
                         <div
                           className="w-4 h-4 rounded-full"
