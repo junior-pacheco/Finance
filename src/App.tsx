@@ -169,7 +169,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black pb-20">
       {/* Header Móvil */}
-      <div className="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-10">
+      <div className="bg-zinc-900 sticky top-0 z-10">
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
