@@ -91,7 +91,7 @@ export function AddTransactionModal({
           <Input
             type="number"
             label="Monto"
-            placeholder="0.00"
+            // placeholder="0.00"
             value={amount}
             onValueChange={setAmount}
             variant="bordered"
@@ -117,7 +117,7 @@ export function AddTransactionModal({
 
           {/* Descripción */}
           <Input
-            label="Descripción"
+            // label="Descripción"
             placeholder="¿En qué gastaste?"
             value={description}
             onValueChange={setDescription}
@@ -128,7 +128,7 @@ export function AddTransactionModal({
           {/* Fecha */}
           <Input
             type="date"
-            label="Fecha"
+            // label="Fecha"
             value={date}
             onValueChange={setDate}
             variant="bordered"
