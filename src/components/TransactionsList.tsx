@@ -10,9 +10,9 @@ interface TransactionsListProps {
 export function TransactionsList({ transactions, onDelete }: TransactionsListProps) {
   if (transactions.length === 0) {
     return (
-      <div className="space-y-4">
-        <h2 className="text-xl font-bold text-white">Historial</h2>
-        <Card className="bg-zinc-900/50">
+      <div className="space-y-4 flex justify-center items-center mt-10">
+        {/* <h2 className="text-xl font-bold text-white">Historial</h2> */}
+        <Card className="">
           <CardBody className="p-8 text-center">
             <p className="text-gray-400">No hay transacciones</p>
             <p className="text-sm text-gray-500 mt-1">Agrega tu primera transacción</p>

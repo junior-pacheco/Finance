@@ -75,14 +75,14 @@ export function SavingsGoals({ goals, setGoals }: SavingsGoalsProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-white">Objetivos</h2>
+      <div className="flex mt-4 items-end justify-end">
+        {/* <h2 className="text-xl font-bold text-white">Objetivos</h2> */}
         <Button
           color="secondary"
           variant="solid"
           onPress={() => setIsAddModalOpen(true)}
           startContent={<Sparkles className="h-4 w-4" />}
-          className="bg-purple-600 text-white"
+          className="bg-purple-600 rounded-md flex text-white"
         >
           Nueva Meta
         </Button>

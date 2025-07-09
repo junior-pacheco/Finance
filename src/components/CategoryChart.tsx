@@ -47,9 +47,9 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      {/* <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-white">Categorías</h2>
-      </div>
+      </div> */}
 
       {/* Toggle Buttons */}
       <div className="grid grid-cols-2 gap-2">
@@ -71,7 +71,7 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
         </Button>
       </div>
 
-      <Card className="bg-zinc-900/50">
+      <Card className="bg-zinc-900/50 rounded-xl">
         <CardHeader>
           <h3 className="text-lg font-semibold text-white">
             {viewType === "expenses" ? "Gastos" : "Ingresos"} por Categoría
@@ -79,7 +79,7 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
         </CardHeader>
         <CardBody>
           {currentData.length === 0 ? (
-            <div className="h-64 flex items-center justify-center text-gray-400">
+            <div className="h-64 flex items-center rounded-xl justify-center text-gray-400">
               No hay datos de {viewType === "expenses" ? "gastos" : "ingresos"}
             </div>
           ) : (

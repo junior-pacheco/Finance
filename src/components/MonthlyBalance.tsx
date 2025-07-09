@@ -31,7 +31,7 @@ export function MonthlyBalance({ transactions }: MonthlyBalanceProps) {
   })
 
   return (
-    <Card className="bg-zinc-900/50">
+    <Card className="bg-zinc-900/50 rounded-xl">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-2">
           <Calendar className="h-5 w-5 text-white" />
@@ -40,7 +40,7 @@ export function MonthlyBalance({ transactions }: MonthlyBalanceProps) {
       </CardHeader>
       <CardBody className="space-y-4">
         <div className="grid grid-cols-2 gap-3">
-          <div className="text-center p-3 bg-success/10 rounded-lg border border-success/20">
+          <div className="text-center p-3 bg-success/10 rounded-lg border border-green-500/20">
             <div className="flex items-center justify-center gap-1 text-success mb-1">
               <TrendingUp className="h-4 w-4" />
               <span className="text-xs font-medium">Ingresos</span>
@@ -48,7 +48,7 @@ export function MonthlyBalance({ transactions }: MonthlyBalanceProps) {
             <p className="text-lg font-bold text-success">${monthlyIncome.toLocaleString()}</p>
           </div>
 
-          <div className="text-center p-3 bg-danger/10 rounded-lg border border-danger/20">
+          <div className="text-center p-3 bg-danger/10 rounded-lg border border-red-500/20">
             <div className="flex items-center justify-center gap-1 text-danger mb-1">
               <TrendingDown className="h-4 w-4" />
               <span className="text-xs font-medium">Gastos</span>
@@ -57,10 +57,10 @@ export function MonthlyBalance({ transactions }: MonthlyBalanceProps) {
           </div>
         </div>
 
-        <div className="text-center p-4 bg-zinc-800/50 rounded-lg">
+        <div className="text-center p-4 rounded-xl bg-zinc-800/50">
           <p className="text-sm text-gray-400 mb-1">Balance del mes</p>
           <div className="flex items-center justify-center gap-2">
-            <p className={`text-xl font-bold ${isPositive ? "text-success" : "text-danger"}`}>
+            <p className={`text-xl font-bold ${isPositive ? "text-green-500" : "text-red-500"}`}>
               {isPositive ? "+" : ""}${monthlyBalance.toLocaleString()}
             </p>
             <Chip color={isPositive ? "success" : "danger"} variant="flat">

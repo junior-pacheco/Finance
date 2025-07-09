@@ -39,7 +39,7 @@ export function IncomeExpenseChart({ transactions }: IncomeExpenseChartProps) {
 
   if (chartData.length === 0) {
     return (
-      <Card className="bg-zinc-900/50">
+      <Card className="bg-zinc-900/50 rounded-xl">
         <CardHeader>
           <h3 className="text-lg font-semibold text-white">Últimos Meses</h3>
         </CardHeader>
@@ -51,7 +51,7 @@ export function IncomeExpenseChart({ transactions }: IncomeExpenseChartProps) {
   }
 
   return (
-    <Card className="bg-zinc-900/50">
+    <Card className="bg-zinc-900/50 rounded-xl">
       <CardHeader>
         <h3 className="text-lg font-semibold text-white">Últimos Meses</h3>
       </CardHeader>

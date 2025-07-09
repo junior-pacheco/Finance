@@ -108,7 +108,7 @@ function App() {
     switch (activeTab) {
       case "home":
         return (
-          <div className="space-y-4">
+          <div className="space-y-4 text-white">
             <MonthlyBalance transactions={transactions} />
             <IncomeExpenseChart transactions={transactions} />
             <div className="space-y-3">
@@ -121,7 +121,7 @@ function App() {
                         <div className="flex items-center space-x-3">
                           <div
                             className={`p-2 rounded-full ${
-                              transaction.type === "income" ? "bg-success/20 text-success" : "bg-danger/20 text-danger"
+                              transaction.type === "income" ? "bg-green-500/20 text-green-500" : "bg-red-500/20 text-red-500"
                             }`}
                           >
                             {transaction.type === "income" ? (
@@ -137,7 +137,7 @@ function App() {
                         </div>
                         <span
                           className={`font-semibold text-sm ${
-                            transaction.type === "income" ? "text-success" : "text-danger"
+                            transaction.type === "income" ? "text-green-500" : "text-red-500"
                           }`}
                         >
                           {transaction.type === "income" ? "+" : "-"}${transaction.amount.toLocaleString()}
@@ -173,11 +173,11 @@ function App() {
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-primary/20 rounded-full">
-                <Wallet className="h-6 w-6 text-primary" />
+              <div className="p-2">
+                <Wallet className="h-6 w-6 text-purple-500" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-white">FinanceApp</h1>
+                <h1 className="text-lg font-bold text-purple-500">Finance</h1>
                 <p className="text-xs text-gray-400">Tu dinero bajo control</p>
               </div>
             </div>
@@ -188,7 +188,7 @@ function App() {
               onPress={() => setIsAddModalOpen(true)}
               className="rounded-full h-10 w-10"
             >
-              <Plus className="h-5 w-5" />
+              <Plus className="h-5 w-5 text-white" />
             </Button>
           </div>
         </div>
@@ -197,25 +197,25 @@ function App() {
       {/* Balance Cards - Solo en Home */}
       {activeTab === "home" && (
         <div className="px-4 py-4 space-y-3">
-          <Card className="bg-zinc-900/50">
+          <Card className="bg-zinc-900/50 rounded-xl">
             <CardBody className="p-4">
               <div className="text-center">
                 <p className="text-gray-400 text-sm mb-1">Balance Total</p>
                 <p className="text-3xl font-bold text-white mb-3">${balance.toLocaleString()}</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-3 bg-success/10 rounded-lg border border-success/20">
+                  <div className="text-center p-3 bg-green-500/10 rounded-lg border border-green-500/20">
                     <div className="flex items-center justify-center gap-1 text-success mb-1">
-                      <TrendingUp className="h-4 w-4" />
-                      <span className="text-xs font-medium">Ingresos</span>
+                      <TrendingUp className="h-4 w-4 text-white" />
+                      <span className="text-xs font-medium text-white">Ingresos</span>
                     </div>
-                    <p className="font-semibold text-success">${totalIncome.toLocaleString()}</p>
+                    <p className="font-semibold text-green-500">${totalIncome.toLocaleString()}</p>
                   </div>
-                  <div className="text-center p-3 bg-danger/10 rounded-lg border border-danger/20">
+                  <div className="text-center p-3 bg-red-500/10 rounded-lg border border-red-500/20">
                     <div className="flex items-center justify-center gap-1 text-danger mb-1">
-                      <TrendingDown className="h-4 w-4" />
-                      <span className="text-xs font-medium">Gastos</span>
+                      <TrendingDown className="h-4 text-white w-4" />
+                      <span className="text-xs text-white font-medium">Gastos</span>
                     </div>
-                    <p className="font-semibold text-danger">${totalExpenses.toLocaleString()}</p>
+                    <p className="font-semibold text-red-500">${totalExpenses.toLocaleString()}</p>
                   </div>
                 </div>
               </div>
@@ -228,7 +228,7 @@ function App() {
       <div className="px-4 pb-4">{renderContent()}</div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-zinc-900 border-t border-zinc-800">
+      <div className="fixed bottom-0 left-0 right-0  bg-zinc-900">
         <Tabs
           selectedKey={activeTab}
           onSelectionChange={(key) => setActiveTab(key as string)}
@@ -237,7 +237,7 @@ function App() {
             base: "w-full",
             tabList: "grid grid-cols-4 w-full bg-transparent",
             tab: "h-16 flex-col",
-            tabContent: "group-data-[selected=true]:text-primary text-gray-400",
+            tabContent: "group-data-[selected=true]:text-white text-purple-500",
           }}
         >
           <Tab
